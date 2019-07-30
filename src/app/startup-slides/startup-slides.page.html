@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-icon name="close-circle" routerLink="/auth"></ion-icon>
+    <ion-title>Welcome</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides pager="true" [options]="slideOpts">
+      <ion-slide padding>
+        <ion-list>
+          <ion-item>
+            <ion-img [src]="'/assets/slide1.png'"></ion-img>
+          </ion-item>
+          <ion-item>
+            <ion-label>Welcome</ion-label>
+          </ion-item>
+          <ion-item>
+            <p>Hey there, enthusiastic travelers!
+              Are you ready for a mesmerising experience for travelling? Well, let's see what Tourize has for you.
+              </p>
+          </ion-item>
+        </ion-list>
+      </ion-slide>
+      <ion-slide padding>
+        <ion-list>
+          <ion-item>
+            <ion-img [src]="'/assets/slide2.png'"></ion-img>
+          </ion-item>
+          <br>
+          <br>
+          <br>
+          <ion-item>
+            <ion-label>Design Your Trip
+            </ion-label>
+          </ion-item>
+          <ion-item>
+            <p>Already know where you're going? Just need someone to help you make a plan? Don't worry, Tourize for the
+              rescue. Just head to the "Design Your Trip" section, and we'll help you along the way.
+              </p>
+          </ion-item>
+        </ion-list>
+      </ion-slide>
+      <ion-slide padding>
+        <ion-list>
+          <ion-item>
+            <ion-img style="height:290px;" [src]="'/assets/slide3.png'"></ion-img>
+          </ion-item>
+          <ion-item>
+            <ion-label>Surprise Me
+            </ion-label>
+          </ion-item>
+          <ion-item>
+            <p>"Hmm, I don't know where I'm going." "What could be the best experience for me?"
+              Let us carry this off your shoulders. Tourize will ask you some questions to get the most out of your
+              interests and recommend wonderful trips suiting you. Let's get started.</p>
+          </ion-item>
+          <ion-item>
+            <ion-button routerLink="/auth" expand="block" color="success">Start Now !!!!</ion-button>
+            <!-- <ion-button routerLink="/survey" expand="block" color="primary">Don't Have a plan ?</ion-button>
+            <ion-button color="primary">Primary</ion-button> -->
+          </ion-item>
+        </ion-list>
+      </ion-slide>
+  </ion-slides>
+</ion-content>

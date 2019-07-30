@@ -1,0 +1,32 @@
+:root {
+  --ion-safe-area-top: 20px;
+  --ion-safe-area-bottom: 22px;
+}
+.swiper-slide {
+  display: block;
+}
+// img{
+//   max-width: 250px;
+//   max-height: 200px;
+// }
+
+// .scale-in-hor-left {
+// 	animation: scale-in-hor-left 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+// }
+// @keyframes scale-in-hor-left {
+//   0% {
+//     transform: scaleX(0);
+//     transform-origin: 0% 0%;
+//     opacity: 1;
+//   }
+//   50% {
+//     transform: scaleX(0.2);
+//     transform-origin: 0% 0%;
+//     opacity: 1;
+//   }
+//   100% {
+//     transform: scaleX(1);
+//     transform-origin: 0% 0%;
+//     opacity: 1;
+//   }
+// }

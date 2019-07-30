@@ -1,0 +1,8 @@
+{
+  "name": "touriz",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
+  "type": "angular"
+}

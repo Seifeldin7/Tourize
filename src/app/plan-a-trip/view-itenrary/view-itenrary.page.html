@@ -1,0 +1,192 @@
+<!-- -->
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/trips"></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf="iten">
+      <span ion-text>{{ iten.title }}</span>
+    </ion-title>
+    <ion-buttons *ngIf="SurpriseFlag" slot="primary">
+        <ion-button (click)="onAdd()" >
+          <ion-icon name="add" slot="icon-only"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="common-bg contentToConvert" *ngIf="iten">
+  <!--slides-->
+  <!-- *ngFor="let image of trip.images" -->
+  <ion-item>
+    <ion-chip>
+      <ion-avatar>
+        <img [src]="'/assets/PN.jpg'">
+      </ion-avatar>
+      <ion-label><small>PN</small></ion-label>
+    </ion-chip>
+    <ion-chip >
+      <ion-avatar>
+        <img src="https://media.licdn.com/dms/image/C4D03AQEgQnNJeE2kGw/profile-displayphoto-shrink_800_800/0?e=1570060800&v=beta&t=KsDjkGScmNyl0K2VMWdyFeEQw4e5zP4s-UIQNkYSYKc">
+      </ion-avatar>
+      <ion-label><small>AM</small></ion-label>
+    </ion-chip>
+    <ion-chip>
+      <ion-avatar>
+        <img [src]="'/assets/NR.jpg'">
+      </ion-avatar>
+      <ion-label><small>NR</small></ion-label>
+    </ion-chip>
+    <ion-chip>
+      <ion-avatar>
+        <img [src]="'/assets/SM.jpg'">
+      </ion-avatar>
+      <ion-label><small>SM</small></ion-label>
+    </ion-chip>
+    <ion-chip>
+      <ion-avatar>
+        <img [src]="'/assets/OM.jpg'">
+      </ion-avatar>
+      <ion-label><small>OM</small></ion-label>
+    </ion-chip>
+  </ion-item>
+  <ion-slides class="to-top" pager>
+    <ion-slide>
+      <img
+        src="https://croatia.hr/sites/default/files/styles/image_full_width/public/2017-08/02_01_slide_nature.jpg?itok=ItAHmLlp"
+        alt=""
+      />
+    </ion-slide>
+  </ion-slides>
+
+  <!--services-->
+  <ion-grid class="time">
+    <ion-row>
+      <ion-col>
+        <div>
+          <div>
+            <ion-icon name="time" class="text-white"></ion-icon>
+            <span ion-text class="text-white" slot="start">From: </span>
+            <span ion-text class="text-white" slot="start">{{
+              iten.departure_date
+            }}</span>
+            <span ion-text slot="end" class="text-white ion-float-right">{{
+              iten.arrival_date
+            }}</span>
+            <span ion-text class="text-white ion-float-right" slot="start"
+              >To:
+            </span>
+            <ion-icon name="time" class="text-white ion-float-right"></ion-icon>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div padding>
+    <ion-button class="text-white" shape="round">
+      {{ iten.dest }}
+    </ion-button>
+    <br>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos omnis dolorem, nihil perspiciatis, autem inventore vel magnam fugit dolore, iste officiis aut temporibus neque tempora reprehenderit! Inventore obcaecati ducimus possimus.
+  </div>
+  <!--high light-->
+  <!-- <div padding>
+    <h4 ion-text class="primary">Stops</h4>
+    <ul>
+      <li *ngFor="let stop of iten.paths; let i = index">
+        <ion-icon name="radio-button-on" class="txtgreen"></ion-icon>
+        <span ion-text class="primary2">Destination: </span>
+        <span ion-text color="light">{{ stop.dest }}</span>
+        <br />
+        <ion-icon name="radio-button-on" class="txtgreen"></ion-icon>
+        <span ion-text class="ion-margin-top primary2">Origin: </span>
+        <span ion-text color="light">{{ stop.origin }}</span>
+        <br />
+        <ion-icon name="radio-button-on" class="txtgreen"></ion-icon>
+        <span ion-text class="ion-margin-top primary2">Departure Date: </span>
+        <span ion-text color="light">{{ stop.departure_date }}</span>
+        <br />
+        <ion-icon name="radio-button-on" class="txtgreen"></ion-icon>
+        <span ion-text class="ion-margin-top primary2">Arrival Date: </span>
+        <span ion-text color="light">{{ stop.arrival_date }}</span>
+        <hr class="border" />
+      </li>
+    </ul>
+  </div> -->
+  <div padding>
+    <h4 ion-text class="primary">Stops</h4>
+  </div>
+  <section id="cd-timeline" class="cd-container">
+    <div *ngFor="let stop of iten.paths; let i = index">
+      <div class="cd-timeline-block">
+        <div text-center class=" iconcon royal">
+          <ion-icon
+            style="height: 30px;"
+            name="compass"
+            class=" cd-timeline-icon"
+          ></ion-icon>
+        </div>
+        <div padding class="cd-timeline-content  royal pad">
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <span ion-text class="primary2">Destination: </span>
+                <span ion-text color="light">{{ stop.dest }}</span>
+                <br />
+                <span ion-text class="ion-margin-top primary2">Origin: </span>
+                <span ion-text color="light">{{ stop.origin }}</span>
+                <br />
+                <span ion-text class="ion-margin-top primary2"
+                  >Departure Date:
+                </span>
+                <span ion-text color="light">{{ stop.departure_date }}</span>
+                <br />
+                <span ion-text class="ion-margin-top primary2"
+                  >Arrival Date:
+                </span>
+                <span ion-text color="light">{{ stop.arrival_date }}</span>
+                <br />
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <span class="ion-margin-top primary2">Accomodation: </span>
+              </ion-col>
+              <ion-col>
+                <ion-button (click)="onEditAccomodation(i)" shape="round"size="small">
+                  Edit
+                </ion-button>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <span ion-text class="ion-margin-top primary2"
+                  >Transportation:
+                </span>
+              </ion-col>
+              <ion-col>
+                <ion-button (click)="onEditTransportation(i)"  shape="round" size="small">
+                  Edit
+                </ion-button>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <span ion-text class="ion-margin-top primary2"
+                  >Activities:
+                </span>
+              </ion-col>
+              <ion-col>
+                <ion-button (click)="onEditActivities(i)"  shape="round" size="small">
+                  Edit
+                </ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+      </div>
+    </div>
+  </section>
+</ion-content>

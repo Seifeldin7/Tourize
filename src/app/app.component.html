@@ -1,0 +1,59 @@
+<ion-app>
+  <ion-menu side="start">
+    <ion-header>
+      <ion-toolbar >
+        <ion-title>
+          Tourize
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content padding>
+      <ion-list>
+        <!-- <ion-menu-toggle>
+          <ion-item lines="none" routerLink="'/plan-a-trip/2' + iten_id">
+            <ion-icon name="business" slot="start"></ion-icon>
+            <ion-label>Plan A Trip</ion-label>
+          </ion-item>
+        </ion-menu-toggle> -->
+        <!-- <ion-menu-toggle>
+          <ion-item lines="none" routerLink="/survey">
+            <ion-icon name="business" slot="start"></ion-icon>
+            <ion-label>Surprise Me</ion-label>
+          </ion-item>
+        </ion-menu-toggle> -->
+        <ion-menu-toggle>
+          <ion-item lines="none" routerLink="/blog-it">
+            <ion-icon name="camera" slot="start"></ion-icon>
+            <ion-label>Blog It</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item lines="none" routerLink="/trips">
+            <ion-icon name="airplane" slot="start"></ion-icon>
+            <ion-label>My trips</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item lines="none" routerLink="/profile/1">
+            <ion-icon name="person" slot="start"></ion-icon>
+            <ion-label>My Profile</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item lines="none" routerLink="/chat-list/1">
+            <ion-icon name="chatboxes" slot="start"></ion-icon>
+            <ion-label>Chats</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item lines="none"  button>
+            <ion-icon name="exit" slot="start"></ion-icon>
+            <ion-label>Logout</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet padding main></ion-router-outlet>
+</ion-app>

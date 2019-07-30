@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()">
+        <ion-icon slot="start" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+  <img *ngIf="img_id==0"  [src]="'/assets/housing.png'" />
+  <img *ngIf="img_id==1" [src]="'/assets/Transport.png'" />
+  <img *ngIf="img_id==2" [src]="'/assets/activity.png'" />
+  <img *ngIf="img_id==3" [src]="'/assets/info.png'" />
+  <p text-center>{{text}}</p>
+</ion-content>

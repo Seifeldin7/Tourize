@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding >
+  <ion-grid>
+    <ion-row justify-content-center align-items-center>
+      <ion-col >
+          <img  class="center_img" [src]="'/assets/logo.png'" />
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-row>
+    <ion-col>
+      <ion-card>
+        <ion-item color="success" (click)="onDesign()" >
+          <ion-icon  size="large" expand="block" name="finger-print"  slot="start"></ion-icon>
+          <ion-label>Design Your Trip</ion-label>
+        </ion-item>
+    </ion-card>
+    </ion-col>
+    <ion-col>
+      <ion-card>
+        <ion-item color="success" routerLink="/surprise-me">
+          <ion-icon  size="large" expand="block" name="rocket" slot="start"></ion-icon>
+          <ion-label>Surprise Me</ion-label>
+        </ion-item>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-content>

@@ -1,0 +1,55 @@
+
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start">
+        <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>The Survey</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen  scroll-y="false">
+  <ion-slides pager="true" [options]="slideOpts">
+    <ion-slide *ngFor="let question of questions; let i= index;">
+        <img *ngIf="i==1" class="scale-in-hor-left" [src]="'/assets/survey1.jpg'">
+        <img *ngIf="i==2" class="scale-in-hor-left" [src]="'/assets/survey2.jpg'">
+        <img *ngIf="i==3" class="scale-in-hor-left" [src]="'/assets/survey3.jpg'">
+
+      <ion-list>
+        <ion-item>
+          <ion-radio-group>
+            <ion-list-header>
+              <ion-label>{{question.question}}</ion-label>
+            </ion-list-header>
+            <ion-item *ngFor="let choice of question.choices">
+              <ion-label>{{choice}}</ion-label>
+              <ion-radio slot="start" color="secondary" value="{{choice}}" (ionSelect)="answer(i,choice)"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </ion-item>
+        <!-- <ion-item> -->
+          <!-- <img class="scale-in-hor-left" src="https://d17fnq9dkz9hgj.cloudfront.net/breed-uploads/2018/08/golden-retriever-detail.jpg?bust=1535565857&width=355"> -->
+
+
+          
+
+        <!-- </ion-item> -->
+      </ion-list>
+      <ion-list>
+        <ion-item>
+
+        </ion-item>
+      </ion-list>
+    </ion-slide>
+    <ion-slide>
+        <img  class="scale-in-hor-left" [src]="'/assets/Hooray.gif'">
+      <h1>this is the end thanks!!!!</h1>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
+<ion-footer>
+  <ion-toolbar color="light">
+    <ion-button slot="end" color="primary" (click)="submit()">Submit
+      <ion-icon slot="end" name="checkmark"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-back-button slot="start"
+      [defaultHref]="'/plan-a-trip/2/' + iten_id"
+    ></ion-back-button>
+    <ion-buttons slot="primary">
+      <ion-button  routerLink="/home">
+          <ion-icon name="home" slot="icon-only" ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <img [src]="'/assets/think.png'" />
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+          <ion-button routerLink="/matching" color="success" expand="block">Find Travel Buddies</ion-button>
+        <meta name="twitter:card" content="summary"/>  <!-- Card type -->
+      <meta name="twitter:site" content="Pratyashi"/>
+      <meta name="twitter:title" content="Pratyashi From Title">
+      <meta name="twitter:description" content="Description" />
+      <meta name="twitter:creator" content="Creater"/>
+      <meta name="twitter:type" content="image"/>
+      <meta name="twitter:image:src" content="https://www.gstatic.com/webp/gallery3/1_webp_a.png" />
+      <meta name="twitter:domain" content="http://vmandi.com" />
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="share()" color="success" expand="block">Pdf It </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <!-- <ion-row>
+      <ion-col>
+          <ion-button color="success" size="small"><a href="https://twitter.com/intent/tweet?ref_src=twsrc%5Etfw&text={{iten.description}}&tw_p=tweetbutton&url=mywesite"  target="_blank"></a><ion-icon name="logo-twitter"></ion-icon>share with twitter</ion-button>
+
+      </ion-col>
+    </ion-row> -->
+    <ion-row>
+      <ion-col>
+          <div class="fb-share-button"
+          data-href="https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+          data-layout="button">
+          </div>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>

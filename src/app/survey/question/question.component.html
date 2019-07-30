@@ -1,0 +1,45 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>The Survey</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>
+      {{question.question}}
+    </ion-label>
+  </ion-item>
+    <ion-chip *ngIf="selected!=false">
+      <ion-icon [color]="col" name="checkbox"></ion-icon>
+      <ion-label>{{ch}}</ion-label>
+      <ion-icon name="close-circle" (click)="delete()"></ion-icon>
+    </ion-chip>
+</ion-content>
+<ion-footer>
+  <ion-toolbar color="light">
+    <ion-list>
+      <ion-chip (click)="update(choice)" color="secondary" *ngFor="let choice of question.choices">
+        <ion-icon [color]="col" name="checkbox-outline"></ion-icon>
+        <ion-label>{{choice}}</ion-label>
+      </ion-chip>
+
+    </ion-list>
+
+
+  </ion-toolbar>
+</ion-footer> -->
+
+
+<ion-radio-group>
+  <ion-list-header>
+    <ion-label>{{question.question}}</ion-label>
+  </ion-list-header>
+  <ion-item *ngFor="let choice of question.choices">
+    <ion-label>{{choice}}</ion-label>
+    <ion-radio slot="start" color="secondary" value="{{choice}}" ()></ion-radio>
+  </ion-item>
+</ion-radio-group>

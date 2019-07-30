@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons color="light" slot="start">
+        <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>chat-list</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item routerLink="/1/chat/{{users_list.id}}">
+      <ion-avatar>
+        <img src="{{users_list.photoURL}}">
+      </ion-avatar>
+      <ion-label padding>{{users_list.displayName}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

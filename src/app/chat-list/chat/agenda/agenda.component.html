@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-button fill="solid" (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-checkbox [(ngModel)]="date" color="dark"></ion-checkbox>
+      <ion-label>Aggree on Date</ion-label>
+      <ion-button>Take a Pole</ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox [(ngModel)]="acc" color="light"></ion-checkbox>
+      <ion-label>Aggree on accomodation</ion-label>
+      <ion-button>Take a Pole</ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox [(ngModel)]="plane" color="dark"></ion-checkbox>
+      <ion-label>Aggree on a plane trip</ion-label>
+      <ion-button>Take a Pole</ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox [(ngModel)]="activ" color="light"></ion-checkbox>
+      <ion-label>Aggree upon activities</ion-label>
+      <ion-button>Take a Pole</ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox [(ngModel)]="meetup" color="dark"></ion-checkbox>
+      <ion-label>Arrange a meet'n greet</ion-label>
+      <ion-button>Take a Pole</ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>

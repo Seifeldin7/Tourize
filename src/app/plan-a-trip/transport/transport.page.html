@@ -1,0 +1,159 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-back-button *ngIf="!viewMode" slot="start"
+        [defaultHref]="'/plan-a-trip/2/' + iten_id"
+      ></ion-back-button>
+      
+    <ion-back-button *ngIf="viewMode" slot="start"
+        [defaultHref]="'/plan-a-trip/view-itenrary/' + iten_id"
+      ></ion-back-button>
+    <ion-buttons slot="primary">
+      <ion-button (click)="onConfirm()" >
+        <ion-icon name="checkmark" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Transport</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list *ngIf="transport_added">
+        <ion-item-sliding *ngFor="let transport of transportations; let i = index">
+          <ion-item >
+            <ion-thumbnail slot="start">
+              <img *ngIf="transport.type=='bus'"
+                [src]="'/assets/bus.jpg'"
+              />
+              <img *ngIf="transport.type=='taxi'"
+                [src]="'/assets/Taxi.jpg'"
+              />
+              <img *ngIf="transport.type=='plane'"
+                [src]="'/assets/plane.jpg'"
+              />
+              <img *ngIf="transport.type=='train'"
+                [src]="'/assets/train.jpeg'"
+              />
+            </ion-thumbnail>
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <ion-label>
+                    <h2>{{ transportations[i].provider }}</h2>
+                    <h4>{{ transportations[i].price }}</h4>
+                    <ion-icon name="time" class="time"></ion-icon>
+                    <span class="time" slot="start">From: </span>
+                    <span class="time" slot="start">{{ transportations[i].start_time }}</span>
+                    <br />
+                    <ion-icon name="time" class="time"></ion-icon>
+                    <span class="time" slot="start">To: </span>
+                    <span class="time" slot="start">{{ transportations[i].end_time }}</span>
+                  </ion-label>
+                </ion-col>
+               
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+          <ion-item-options>
+              <ion-item-option
+                color="danger"
+                
+              >
+                <ion-icon name="trash" slot="icon-only"></ion-icon>
+              </ion-item-option>
+            </ion-item-options>
+        </ion-item-sliding>
+      </ion-list>
+  <!-- <ion-list *ngIf="transport_added">
+    <ion-item *ngFor="let transport of transportations; let i = index">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+              <ion-text color="primary" >Type: {{ transportations[i].type }}</ion-text>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+              <ion-text color="primary">Price: {{ transportations[i].price }}</ion-text>
+            
+          </ion-col> </ion-row
+        ><ion-row>
+          <ion-col>
+              <ion-text color="primary">Provider: {{ transportations[i].provider }}</ion-text>
+            
+          </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-text color="primary">Start Time:</ion-text>
+              <ion-text color="success">
+                <p>{{ transportations[i].start_time }}</p>
+              </ion-text>
+            </ion-col>
+            <ion-col>
+                <ion-text color="primary">End Time:</ion-text>
+              <ion-text color="success">
+                <p>{{ transportations[i].end_time }}</p>
+              </ion-text>
+            </ion-col>
+          </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list> -->
+  <form *ngIf="!transport_added" [formGroup]="form">
+    <ion-grid class="ion-margin-top">
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-list>
+            <ion-item>
+              <ion-label position="floating">Type</ion-label>
+              <ion-select formControlName="type">
+                <ion-select-option *ngFor="let type of types">{{
+                  type
+                }}</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item>
+              <ion-label position="stacked">Price</ion-label>
+              <ion-input formControlName="price"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="stacked">Provider</ion-label>
+              <ion-input formControlName="provider"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="stacked">Start Time</ion-label>
+              <ion-datetime
+                display-format="HH: mm"
+                picker-format="HH: mm"
+                formControlName="start_time"
+              ></ion-datetime>
+            </ion-item>
+            <ion-item>
+              <ion-label position="stacked">End Time</ion-label>
+              <ion-datetime
+                display-format="HH: mm"
+                picker-format="HH: mm"
+                formControlName="end_time"
+              ></ion-datetime>
+            </ion-item>
+            <ion-button (click)="onCofirmAdd()" color="success" expand="block">
+              confirm
+            </ion-button>
+            <ion-button expand="full" color="success"(click)="presentPopover()">Search</ion-button>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngIf="transport_added" class="ion-text-end">
+        <ion-button (click)="onAddTansport()" fill="outline" padding
+          ><ion-icon name="add" slot="start"></ion-icon>Add
+          Transport</ion-button
+        >
+      </ion-col>
+    </ion-row>
+    
+  </ion-grid>
+</ion-content>

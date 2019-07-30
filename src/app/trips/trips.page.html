@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>My Trips</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item-sliding *ngFor="let iten of my_trips;let i=index">
+      <ion-item >
+        <ion-thumbnail slot="start">
+          <img *ngIf="i==0"
+          [src]="'/assets/nature.jpg'"          />
+          <img *ngIf="i==1"
+          [src]="'/assets/paris.jpg'"  />
+          <img *ngIf="i!=0 && i!=1"
+          [src]="'/assets/nature.jpg'"        />
+        </ion-thumbnail>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-label>
+                <h2>{{ iten.title }}</h2>
+                <h4>{{ iten.dest }}</h4>
+                <ion-icon name="time" class="time"></ion-icon>
+                <span class="time" slot="start">From: </span>
+                <span class="time" slot="start">{{ iten.departure_date }}</span>
+                <br />
+                <ion-icon name="time" class="time"></ion-icon>
+                <span class="time" slot="start">To: </span>
+                <span class="time" slot="start">{{ iten.arrival_date }}</span>
+              </ion-label>
+            </ion-col>
+            <ion-col>
+              <ion-button (click)="onView(iten.id)"size="small" shape="round">
+                view
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+      <ion-item-options>
+          <ion-item-option
+            color="danger"
+            (click)="onDeleteItenrary(iten.id, slidingBooking)"
+          >
+            <ion-icon name="trash" slot="icon-only"></ion-icon>
+          </ion-item-option>
+        </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
